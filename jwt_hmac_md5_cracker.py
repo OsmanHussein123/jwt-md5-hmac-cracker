@@ -39,6 +39,6 @@ for x in range(0,21):
  for pin in char:
   pinready=''.join(pin)  
   jwt_token = sign_jwt(payload, pinready)
-  print(jwt_token,pinready)
+  #print(jwt_token,pinready)
   if(jwt_token == correct_token):
     print(f"found: {jwt_token,pinready}" )
