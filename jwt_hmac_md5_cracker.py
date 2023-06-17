@@ -25,20 +25,19 @@ def sign_jwt(payload, secret_key):
 
 
 # Example usage
-payload = '{"username":"osman"}'
-print(f"test: {sign_jwt(payload, 'secret')}")
+payload = '{"username":"admin"}'
+print(f"test: {sign_jwt(payload, 'fsrwjcfszegvsyfa')}")
 
 correct_token = "eyJhbGciOiJNRDVfSE1BQyJ9.eyJ1c2VybmFtZSI6Im9zbWFuIn0.q7cGbsBSmP67j7aJI8uChA" 
-
-x=0
+print(f"token checkk {correct_token == 'eyJhbGciOiJNRDVfSE1BQyJ9.eyJ1c2VybmFtZSI6Im9zbWFuIn0.q7cGbsBSmP67j7aJI8uChA'}")
 chars = string.ascii_letters + string.digits
 print(chars)
-for x in range(0,21):
- char=itertools.product(chars,repeat=x)
- print(x)
- for pin in char:
+
+char=itertools.product(string.ascii_lowercase,repeat=5)
+for pin in char:
   pinready=''.join(pin)  
-  jwt_token = sign_jwt(payload, pinready)
+  jwt_token = sign_jwt(payload, "fsrwjcfszeg"+ pinready)
   #print(jwt_token,pinready)
   if(jwt_token == correct_token):
     print(f"found: {jwt_token,pinready}" )
+    break
