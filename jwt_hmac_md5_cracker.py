@@ -27,7 +27,7 @@ def sign_jwt(payload, secret_key):
 # Example usage
 payload = '{"username":"admin"}'
 print(f"test: {sign_jwt(payload, 'fsrwjcfszegvsyfa')}")
-
+payload = '{"username":"osman"}'
 correct_token = "eyJhbGciOiJNRDVfSE1BQyJ9.eyJ1c2VybmFtZSI6Im9zbWFuIn0.q7cGbsBSmP67j7aJI8uChA" 
 print(f"token checkk {correct_token == 'eyJhbGciOiJNRDVfSE1BQyJ9.eyJ1c2VybmFtZSI6Im9zbWFuIn0.q7cGbsBSmP67j7aJI8uChA'}")
 chars = string.ascii_letters + string.digits
